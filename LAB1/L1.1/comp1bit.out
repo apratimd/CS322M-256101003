@@ -1,0 +1,80 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2009.vpi";
+S_000002590e17a870 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_000002590e17df10 .scope module, "tb_comparator1bit" "tb_comparator1bit" 3 4;
+ .timescale -9 -12;
+v000002590e450200_0 .var "A", 0 0;
+v000002590e44fd00_0 .var "B", 0 0;
+v000002590e44ff80_0 .net "o1", 0 0, L_000002590e17a6e0;  1 drivers
+v000002590e450020_0 .net "o2", 0 0, L_000002590e3d3340;  1 drivers
+v000002590e44fe40_0 .net "o3", 0 0, L_000002590e404db0;  1 drivers
+S_000002590e17e0a0 .scope module, "dut" "comparator1bit" 3 8, 4 4 0, S_000002590e17df10;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "o1";
+    .port_info 3 /OUTPUT 1 "o2";
+    .port_info 4 /OUTPUT 1 "o3";
+L_000002590e17e370 .functor NOT 1, v000002590e44fd00_0, C4<0>, C4<0>, C4<0>;
+L_000002590e17a6e0 .functor AND 1, v000002590e450200_0, L_000002590e17e370, C4<1>, C4<1>;
+L_000002590e179650 .functor XOR 1, v000002590e450200_0, v000002590e44fd00_0, C4<0>, C4<0>;
+L_000002590e3d3340 .functor NOT 1, L_000002590e179650, C4<0>, C4<0>, C4<0>;
+L_000002590e405120 .functor NOT 1, v000002590e450200_0, C4<0>, C4<0>, C4<0>;
+L_000002590e404db0 .functor AND 1, L_000002590e405120, v000002590e44fd00_0, C4<1>, C4<1>;
+v000002590e4052a0_0 .net "A", 0 0, v000002590e450200_0;  1 drivers
+v000002590e3d31a0_0 .net "B", 0 0, v000002590e44fd00_0;  1 drivers
+v000002590e3f5780_0 .net *"_ivl_0", 0 0, L_000002590e17e370;  1 drivers
+v000002590e1795b0_0 .net *"_ivl_4", 0 0, L_000002590e179650;  1 drivers
+v000002590e17a640_0 .net *"_ivl_8", 0 0, L_000002590e405120;  1 drivers
+v000002590e17e230_0 .net "o1", 0 0, L_000002590e17a6e0;  alias, 1 drivers
+v000002590e17e2d0_0 .net "o2", 0 0, L_000002590e3d3340;  alias, 1 drivers
+v000002590e404d10_0 .net "o3", 0 0, L_000002590e404db0;  alias, 1 drivers
+    .scope S_000002590e17df10;
+T_0 ;
+    %vpi_call/w 3 11 "$dumpfile", "comp1bit.vcd" {0 0 0};
+    %vpi_call/w 3 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002590e17df10 {0 0 0};
+    %vpi_call/w 3 13 "$display", "A B | o1(A>B) o2(A==B) o3(A<B)" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002590e450200_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002590e44fd00_0, 0, 1;
+    %delay 1000, 0;
+    %vpi_call/w 3 15 "$display", "%0d %0d |    %0d        %0d         %0d", v000002590e450200_0, v000002590e44fd00_0, v000002590e44ff80_0, v000002590e450020_0, v000002590e44fe40_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002590e450200_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002590e44fd00_0, 0, 1;
+    %delay 1000, 0;
+    %vpi_call/w 3 16 "$display", "%0d %0d |    %0d        %0d         %0d", v000002590e450200_0, v000002590e44fd00_0, v000002590e44ff80_0, v000002590e450020_0, v000002590e44fe40_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002590e450200_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002590e44fd00_0, 0, 1;
+    %delay 1000, 0;
+    %vpi_call/w 3 17 "$display", "%0d %0d |    %0d        %0d         %0d", v000002590e450200_0, v000002590e44fd00_0, v000002590e44ff80_0, v000002590e450020_0, v000002590e44fe40_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002590e450200_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002590e44fd00_0, 0, 1;
+    %delay 1000, 0;
+    %vpi_call/w 3 18 "$display", "%0d %0d |    %0d        %0d         %0d", v000002590e450200_0, v000002590e44fd00_0, v000002590e44ff80_0, v000002590e450020_0, v000002590e44fe40_0 {0 0 0};
+    %delay 1000, 0;
+    %vpi_call/w 3 19 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "tb_comparator1bit.v";
+    "comparator1bit.v";
