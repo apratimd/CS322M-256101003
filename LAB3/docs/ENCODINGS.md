@@ -37,4 +37,3 @@ funct7 |   rs2 |   rs1 | funct3|  rd | opcode
 - `funct7=0000011`, `funct3=000`, `rd=6`, `rs1=2`, `rs2=0`, `opcode=0x0B`  
 - `inst = (3<<25)|(0<<20)|(2<<15)|(0<<12)|(6<<7)|0x0B = 0x0601030B`
 
-> See the assignment PDF for the full table and notes about rotate‑by‑0 and INT_MIN behavior【59†source】.
