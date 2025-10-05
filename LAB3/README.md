@@ -1,6 +1,6 @@
 # RVX10 — Single‑Cycle Extension (CUSTOM‑0)
 
-This submission implements **RVX10 (10 custom single‑cycle instructions)** on top of the provided RV32I single‑cycle core, using the reserved **CUSTOM‑0 (0x0B)** opcode【59†source】.
+This submission implements **RVX10 (10 custom single‑cycle instructions)** on top of the provided RV32I single‑cycle core, using the reserved **CUSTOM‑0 (0x0B)** opcode.
 
 
 The simulation prints **“Simulation succeeded”** when the program **stores 25 to address 100**.
