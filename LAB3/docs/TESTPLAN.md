@@ -1,6 +1,6 @@
 # RVX10 Test Plan
 
-**Harness rule:** At end of the program, store **25** to memory address **100**; the provided testbench prints “Simulation succeeded”【59†source】.
+**Harness rule:** At end of the program, store **25** to memory address **100**; the provided testbench prints “Simulation succeeded”.
 
 ## Strategy
 - For each op, compute deterministic results and optionally fold into a checksum register (e.g., `x28`)【59†source】.
