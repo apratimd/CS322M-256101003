@@ -2,20 +2,8 @@
 
 This submission implements **RVX10 (10 custom single‑cycle instructions)** on top of the provided RV32I single‑cycle core, using the reserved **CUSTOM‑0 (0x0B)** opcode【59†source】.
 
-## Build & Run
-Use the included Icarus Verilog flow:
-```bash
-# Example
-iverilog -g2012 -o sim riscvsingle.sv
-vvp sim
-```
 
-Or your Makefile target:
-```bash
-make clean && make run
-```
-
-The simulation prints **“Simulation succeeded”** when the program **stores 25 to address 100**【59†source】.
+The simulation prints **“Simulation succeeded”** when the program **stores 25 to address 100**.
 
 ## Files
 - `src/riscvsingle.sv` — RTL with RVX10 decode + ALU logic integrated.
